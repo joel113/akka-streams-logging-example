@@ -9,11 +9,12 @@ object Main extends App {
 
   val flow = Flow[Int]
     .map(1 / _) // throwing ArithmeticException: / by zero
-    .log("error logging") // only this log statement leads to an exception log statement
+    //.log("error logging") // only this log statement leads to an exception log statement
     .to(Sink.ignore)
 
   Source(-5 to 5)
-    .wireTap(flow)
+    //.wireTap(flow)
+    .divertTo(flow, _ => true)
     .map(_ + 1)
     .log("error logging")
     .runForeach(println)
