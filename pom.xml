@@ -11,7 +11,7 @@
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
-        <scala.binary.version>2.13</scala.binary.version>
+        <scala.binary.version>2.12</scala.binary.version>
     </properties>
 
     <dependencies>
